@@ -5,10 +5,10 @@ import os
 from os.path import join, dirname
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_PATH = os.getcwd()
-
+PROJECT_PATH = dirname(dirname(dirname(__file__)))
 APPS_PATH = join(PROJECT_PATH, "apps")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,7 +18,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['gitbo1.herokuapp.com']
+ALLOWED_HOSTS = ['gitbo1.herokuapp.com', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

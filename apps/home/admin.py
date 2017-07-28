@@ -12,7 +12,7 @@ class AutorAdmin(admin.ModelAdmin):
 
 @admin.register(Libro)
 class LibroAdmin(admin.ModelAdmin):
-	list_display = ['titulo', 'genero', 'autor']
+	list_display = ['titulo', 'genero', 'autorLibro']
 
 	class Meta:
 		model = Libro

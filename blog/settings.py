@@ -4,13 +4,9 @@ import os
 
 from os.path import join, dirname
 
-
 PROJECT_PATH = dirname(dirname(dirname(__file__)))
 APPS_PATH = join(PROJECT_PATH, "apps")
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '4nx20!$r11v78p3*jm*%f6sy(j++c_$zw^gi^=fa-wstc5-=cv'
 

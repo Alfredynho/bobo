@@ -17,7 +17,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://gitbo1.herokuapp.com/']
 
 
 INSTALLED_APPS = [

@@ -1,30 +1,189 @@
+{% load i18n static %}
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sugerencias</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+<html lang="es">
+    <head>                        
+        <title>{% trans 'Inicio' %} | {% trans 'QSL Fiesta' %}</title>
+        
+        <!-- META SECTION -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- END META SECTION -->
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+        <!-- EOF CSS INCLUDE -->
+    <style type="text/css">
+        
+        .btn-messenger{
+            background-color: #0084FF;
+            padding: 10px;
+            border-radius: 5px;
+            color:#fff;
+        }
+        .btn-telegram{
+            background-color: #497799;
+            padding: 10px;
+            border-radius: 5px;
+            color:#fff;
+        }
+        .centero{
+            background-color: black;
+            opacity: 0.7;
+            border-radius: 10px;
+        }
+    </style>
     </head>
-    <body>
-        <h2 style="text-align:center;">Libros</h2>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <ul class="list-group">
-                    {% for libro in libros %}
-                        <li class="list-group-item">{{ libro.titulo|upper }} <strong>{{ libro.autor }}</strong></li>    
-                    {% endfor %}                    
-                </ul>
-            </div>
-        </div>    
-        <script
-              src="https://code.jquery.com/jquery-2.2.4.min.js"
-              integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-              crossorigin="anonymous">
-            </script>
+    <body>        
+        
+        <!-- APP WRAPPER -->
+
+        <div class="app">            
+            <header id="header" style="background: url('{% static 'img/QSLF_post.jpg' %}')">
+                <div class="header">
+                    <div class="container">
+                        <a href="#" class="logo"></a>
+                        <button class="navigation-toggle"><span class="icon-menu"></span></button>
+                        <ul class="navigation hidden-mobile">
+                            <li><a href="#header">{% trans 'Inicio' %}</a></li>
+                            <li><a href="#features">{% trans 'Caracteristicas' %}</a></li>
+{#                            <li><a href="{% url 'account_login' %}">{% trans 'Entrar' %}</a></li>#}
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="header-content">
+                    <div class="container text-center invert ">
+                        <h1 class="">Que no se te acabe la <strong>Diversión! </strong></h1>
+                        <div class="image-container">
+                            <img src="{% static 'img/QSLF_logo.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </header>
             
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <section class="section invert section-condensed">
+                <div class="container text-center">
+                    <p>
+                        <a target="_blank" href="https://m.me/quesigalafiestahoy/" class="btn btn-messenger btn-lg btn-shadowed">
+                            <img src="{% static 'img/messenger.png' %}" width="25px">&nbsp;&nbsp; Escríbenos en Messenger</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+                    </a></p>
+
+                </div>
+            </section>
+            
+        
+              <section class="section section-highlight" id="features">
+                <div class="container">                    
+                    
+                    <div class="heading-wrapper text-center">                                
+                        <h3 class="text-uppercase">{% trans 'CARACTERISTICAS' %}</h3>
+                        <div class="under-heading">de <strong>Que siga la fiesta</strong> tiene para ti</div>
+                    </div>
+                    
+                    <div class="row">
+                                                
+                        <div class="col-md-4">                            
+                            <div class="feature text-center">                                
+                                <div class="feature-icon feature-icon-sm text-lime-500">
+                                    <img src="{% static 'img/facil.png' %}" width="100px">
+                                </div>
+                                <h6 class="text-uppercase text-bolder">{% trans 'Facil de utilizar' %}</h6>
+                                <div class="under-heading">Solo escribenos por Messenger.</div>
+                                <p>Buscanos como <i>Que siga la Fiesta </i> y veras los facil que es de utilizar, además admitamoslo casi todos tienen cuenta en facebook.</p>
+                            </div>                                                        
+                        </div>
+                         <div class="col-md-4">                            
+                            <div class="feature text-center">                                
+                                <div class="feature-icon feature-icon-sm text-lime-500">
+                                    <img src="{% static 'img/rapido.svg' %}" width="100px">
+                                </div>
+                                <h6 class="text-uppercase text-bolder">{% trans 'Entrega Rapida' %}</h6>
+                                <div class="under-heading">Has tus pedidos</div>
+                                <p>No te quedes con las ganas <b>Que siga la Fiesta</b> se encargara de llevar tu pedido en donde tu estes.</p>
+                            </div>                                                        
+                        </div>
+                         <div class="col-md-4">                            
+                            <div class="feature text-center">                                
+                                <div class="feature-icon feature-icon-sm text-lime-500">
+                                    <img src="{% static 'img/debidas.svg' %}" width="100px">
+                                </div>
+                                <h6 class="text-uppercase text-bolder">{% trans 'Los mejores productos y ofertas' %}</h6>
+                                <div class="under-heading">Tenemos una gran variedad de productos</div>
+                                <p>No te quedes con las ganas, que no se te acabe la diversion <b>Que siga la Fiesta</b></p>
+                            </div>                                                        
+                        </div>
+                                               
+                    </div>
+                   
+                    
+                </div>
+            </section>
+
+            <!-- START APP FOOTER -->
+            <div class="app-footer app-footer-default" id="contact">
+                <div class="container">                    
+                    <div class="app-footer-line extended">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <h3 class="title">Que siga la Fiesta</h3>
+                                <p>La manera más facil de realizar tus compras, solo enviando un mensaje por Messenger.</p>
+                                <p><strong>Como?</strong><br>Escribenos por <i><b>Facebook Messenger</b> pruebalo ya!.</p>
+                            </div>
+                           
+                            
+                            <div class="col-md-6 col-sm-6">
+                                <h3 class="title"><span class="icon-thumbs-up"></span> REDES SOCIALES</h3>
+
+                                <a href="https://www.facebook.com/Botmerang" class="label-icon label-icon-footer label-icon-bordered label-icon-rounded label-icon-lg">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                &nbsp;
+                                <a href="https://twitter.com/botmerang" class="label-icon label-icon-footer label-icon-bordered label-icon-rounded label-icon-lg">
+                                    
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                                                
+
+                                
+                            </div>                        
+                        </div>                    
+                    </div>
+                </div>
+                <div class="app-footer-line darken">                
+                    <div class="copyright wide text-center">&copy; 2017 Que siga la Fiesta</div>
+                </div>                
+            </div>
+            <!-- END APP FOOTER -->
+            
+        </div>        
+        <!-- END APP WRAPPER -->                
+        
+        <!-- START SCRIPTS -->
+        <script type="text/javascript" src="{% static 'js/vendor/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/vendor/jquery/jquery-migrate.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/vendor/bootstrap/bootstrap.min.js' %}"></script>
+        
+        <script type="text/javascript" src="{% static 'js/app-landing.js' %}"></script>
+        <script src="{% static 'js/jquery.backgroundvideo.min.js' %}"></script>
+        <!--
+        <script>
+          $(document).ready(function() {
+            var videobackground = new $.backgroundVideo($('header'), {
+              "align": "centerXY",
+              "width": 1280,
+              "height": 720,
+              "path": "{% static 'img/' %}",
+              "filename": "video",
+              "types": ["mp4","ogg","webm"],
+              "preload": true,
+              "autoplay": true,
+              "loop": true
+            });
+          });
+        </script>
+        -->
+        <!-- END SCRIPTS -->
     </body>
 </html>

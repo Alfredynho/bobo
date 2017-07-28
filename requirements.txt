@@ -1,11 +1,5 @@
-
-# Django
 Django==1.11.3
-
-# gunicorn
-
-gunicorn
-
-wsgiref
-
-argparse
+gunicorn==19.7.1
+pkg-resources==0.0.0
+pytz==2017.2
+tqdm==4.15.0

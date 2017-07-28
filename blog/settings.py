@@ -9,8 +9,6 @@ APPS_PATH = join(PROJECT_PATH, "apps")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-
 SECRET_KEY = '4nx20!$r11v78p3*jm*%f6sy(j++c_$zw^gi^=fa-wstc5-=cv'
 
 DEBUG = True
@@ -18,7 +16,6 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['gitbo1.herokuapp.com']
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -106,12 +103,14 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )

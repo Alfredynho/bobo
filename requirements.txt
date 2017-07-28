@@ -1,0 +1,11 @@
+
+# Django
+Django==1.11.3
+
+# gunicorn
+
+gunicorn
+
+wsgiref
+
+argparse
